@@ -1,113 +1,296 @@
-import { Building2, FileText, Image as ImageIcon, Mail, MapPin, Phone, Sparkles, Bookmark } from 'lucide-react'
+import type { Metadata } from 'next'
 import { NavbarShell } from '@/components/shared/navbar-shell'
 import { Footer } from '@/components/shared/footer'
-import { SITE_CONFIG } from '@/lib/site-config'
-import { getFactoryState } from '@/design/factory/get-factory-state'
-import { getProductKind } from '@/design/factory/get-product-kind'
-import { CONTACT_PAGE_OVERRIDE_ENABLED, ContactPageOverride } from '@/overrides/contact-page'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { Badge } from '@/components/ui/badge'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Mail, Phone, MapPin, Clock, Send, FileText, Users, HeadphonesIcon, Building2, ArrowRight } from 'lucide-react'
+import { buildPageMetadata } from '@/lib/seo'
 
-function getTone(kind: ReturnType<typeof getProductKind>) {
-  if (kind === 'directory') {
-    return {
-      shell: 'bg-[#f8fbff] text-slate-950',
-      panel: 'border border-slate-200 bg-white',
-      soft: 'border border-slate-200 bg-slate-50',
-      muted: 'text-slate-600',
-      action: 'bg-slate-950 text-white hover:bg-slate-800',
-    }
-  }
-  if (kind === 'editorial') {
-    return {
-      shell: 'bg-[#fbf6ee] text-[#241711]',
-      panel: 'border border-[#dcc8b7] bg-[#fffdfa]',
-      soft: 'border border-[#e6d6c8] bg-[#fff4e8]',
-      muted: 'text-[#6e5547]',
-      action: 'bg-[#241711] text-[#fff1e2] hover:bg-[#3a241b]',
-    }
-  }
-  if (kind === 'visual') {
-    return {
-      shell: 'bg-[#07101f] text-white',
-      panel: 'border border-white/10 bg-white/6',
-      soft: 'border border-white/10 bg-white/5',
-      muted: 'text-slate-300',
-      action: 'bg-[#8df0c8] text-[#07111f] hover:bg-[#77dfb8]',
-    }
-  }
-  return {
-    shell: 'bg-[#f7f1ea] text-[#261811]',
-    panel: 'border border-[#ddcdbd] bg-[#fffaf4]',
-    soft: 'border border-[#e8dbce] bg-[#f3e8db]',
-    muted: 'text-[#71574a]',
-    action: 'bg-[#5b2b3b] text-[#fff0f5] hover:bg-[#74364b]',
-  }
+export async function generateMetadata(): Promise<Metadata> {
+  return buildPageMetadata({
+    path: '/contact',
+    title: 'Contact Us - Press Release Distribution Support',
+    description: 'Get in touch with Newsmidcentral for press release distribution services, support, and partnership opportunities.',
+    keywords: ['contact', 'support', 'press release distribution', 'customer service'],
+  })
 }
 
+const contactOptions = [
+  {
+    icon: FileText,
+    title: 'Press Release Distribution',
+    description: 'Submit your press release for distribution to our media network',
+    email: 'distribution@newsmidcentral.com',
+    phone: '+44 20 1234 5678',
+  },
+  {
+    icon: Users,
+    title: 'Partnership Opportunities',
+    description: 'Explore partnership and collaboration opportunities with us',
+    email: 'partnerships@newsmidcentral.com',
+    phone: '+44 20 1234 5679',
+  },
+  {
+    icon: HeadphonesIcon,
+    title: 'Customer Support',
+    description: 'Get help with your account, billing, or technical issues',
+    email: 'support@newsmidcentral.com',
+    phone: '+44 20 1234 5670',
+  },
+  {
+    icon: Building2,
+    title: 'Media Inquiries',
+    description: 'For journalists seeking information about Newsmidcentral',
+    email: 'media@newsmidcentral.com',
+    phone: '+44 20 1234 5671',
+  },
+]
+
+const officeLocations = [
+  {
+    city: 'London',
+    address: '123 Fleet Street, London EC4A 2AB',
+    phone: '+44 20 1234 5678',
+    email: 'london@newsmidcentral.com',
+    hours: 'Monday - Friday: 9:00 AM - 6:00 PM',
+  },
+  {
+    city: 'Manchester',
+    address: '456 Deansgate, Manchester M3 4FG',
+    phone: '+44 161 234 5678',
+    email: 'manchester@newsmidcentral.com',
+    hours: 'Monday - Friday: 9:00 AM - 5:00 PM',
+  },
+]
+
+const faqs = [
+  {
+    question: 'How quickly can my press release be distributed?',
+    answer: 'We offer same-day distribution for press releases submitted before 12 PM GMT. Express distribution options are available for urgent releases.',
+  },
+  {
+    question: 'What industries do you specialize in?',
+    answer: 'We distribute press releases across all industries including technology, healthcare, finance, fashion, real estate, and more.',
+  },
+  {
+    question: 'Do you offer writing services?',
+    answer: 'Yes, we have professional writers who can help craft your press release for maximum impact.',
+  },
+  {
+    question: 'Can I track the performance of my press release?',
+    answer: 'Yes, all our plans include detailed analytics and reporting to track media pickups and engagement.',
+  },
+]
+
 export default function ContactPage() {
-  if (CONTACT_PAGE_OVERRIDE_ENABLED) {
-    return <ContactPageOverride />
-  }
-
-  const { recipe } = getFactoryState()
-  const productKind = getProductKind(recipe)
-  const tone = getTone(productKind)
-  const lanes =
-    productKind === 'directory'
-      ? [
-          { icon: Building2, title: 'Business onboarding', body: 'Add listings, verify operational details, and bring your business surface live quickly.' },
-          { icon: Phone, title: 'Partnership support', body: 'Talk through bulk publishing, local growth, and operational setup questions.' },
-          { icon: MapPin, title: 'Coverage requests', body: 'Need a new geography or category lane? We can shape the directory around it.' },
-        ]
-      : productKind === 'editorial'
-        ? [
-            { icon: FileText, title: 'Editorial submissions', body: 'Pitch essays, columns, and long-form ideas that fit the publication.' },
-            { icon: Mail, title: 'Newsletter partnerships', body: 'Coordinate sponsorships, collaborations, and issue-level campaigns.' },
-            { icon: Sparkles, title: 'Contributor support', body: 'Get help with voice, formatting, and publication workflow questions.' },
-          ]
-        : productKind === 'visual'
-          ? [
-              { icon: ImageIcon, title: 'Creator collaborations', body: 'Discuss gallery launches, creator features, and visual campaigns.' },
-              { icon: Sparkles, title: 'Licensing and use', body: 'Reach out about usage rights, commercial requests, and visual partnerships.' },
-              { icon: Mail, title: 'Media kits', body: 'Request creator decks, editorial support, or visual feature placement.' },
-            ]
-          : [
-              { icon: Bookmark, title: 'Collection submissions', body: 'Suggest resources, boards, and links that deserve a place in the library.' },
-              { icon: Mail, title: 'Resource partnerships', body: 'Coordinate curation projects, reference pages, and link programs.' },
-              { icon: Sparkles, title: 'Curator support', body: 'Need help organizing shelves, collections, or profile-connected boards?' },
-            ]
-
   return (
-    <div className={`min-h-screen ${tone.shell}`}>
+    <div className="min-h-screen bg-background">
       <NavbarShell />
-      <main className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <section className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] opacity-70">Contact {SITE_CONFIG.name}</p>
-            <h1 className="mt-4 text-5xl font-semibold tracking-[-0.05em]">A support page that matches the product, not a generic contact form.</h1>
-            <p className={`mt-5 max-w-2xl text-sm leading-8 ${tone.muted}`}>Tell us what you are trying to publish, fix, or launch. We will route it through the right lane instead of forcing every request into the same support bucket.</p>
-            <div className="mt-8 space-y-4">
-              {lanes.map((lane) => (
-                <div key={lane.title} className={`rounded-[1.6rem] p-5 ${tone.soft}`}>
-                  <lane.icon className="h-5 w-5" />
-                  <h2 className="mt-3 text-xl font-semibold">{lane.title}</h2>
-                  <p className={`mt-2 text-sm leading-7 ${tone.muted}`}>{lane.body}</p>
+      
+      {/* Hero Section */}
+      <section className="py-16 bg-gradient-to-br from-[#f8f4ff] to-[#faf0ff]">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <Badge className="mb-4 bg-[#640D5F] text-white">Get in Touch</Badge>
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+              Contact Newsmidcentral
+            </h1>
+            <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+              We're here to help with your press release distribution needs. Reach out to our team for expert support and guidance.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Options */}
+      <section className="py-16 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              How Can We Help You?
+            </h2>
+            <p className="mt-4 text-xl text-gray-600">
+              Choose the right contact option for your specific needs
+            </p>
+          </div>
+          
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {contactOptions.map((option) => (
+              <Card key={option.title} className="text-center p-6 hover:shadow-lg transition-shadow">
+                <div className="mx-auto w-12 h-12 bg-[#f8f4ff] rounded-full flex items-center justify-center mb-4">
+                  <option.icon className="h-6 w-6 text-[#640D5F]" />
                 </div>
-              ))}
+                <h3 className="text-lg font-semibold mb-2">{option.title}</h3>
+                <p className="text-gray-600 text-sm mb-4">{option.description}</p>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-center justify-center gap-2 text-gray-600">
+                    <Mail className="h-4 w-4" />
+                    <span className="text-[#640D5F]">{option.email}</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-gray-600">
+                    <Phone className="h-4 w-4" />
+                    <span>{option.phone}</span>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form and Locations */}
+      <section className="py-16 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-[1fr_1fr]">
+            {/* Contact Form */}
+            <Card className="p-8">
+              <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
+              <form className="space-y-6">
+                <div className="grid gap-4 md:grid-cols-2">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      First Name *
+                    </label>
+                    <Input placeholder="John" className="h-12" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Last Name *
+                    </label>
+                    <Input placeholder="Doe" className="h-12" />
+                  </div>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Email Address *
+                  </label>
+                  <Input type="email" placeholder="john@example.com" className="h-12" />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Phone Number
+                  </label>
+                  <Input type="tel" placeholder="+44 20 1234 5678" className="h-12" />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Subject *
+                  </label>
+                  <Select>
+                    <SelectTrigger className="h-12">
+                      <SelectValue placeholder="Select a subject" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="distribution">Press Release Distribution</SelectItem>
+                      <SelectItem value="partnership">Partnership Inquiry</SelectItem>
+                      <SelectItem value="support">Customer Support</SelectItem>
+                      <SelectItem value="billing">Billing Question</SelectItem>
+                      <SelectItem value="media">Media Inquiry</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Message *
+                  </label>
+                  <Textarea 
+                    placeholder="Tell us more about your needs..."
+                    className="min-h-[120px]"
+                  />
+                </div>
+                
+                <Button type="submit" className="w-full bg-[#640D5F] hover:bg-[#4a0a47] h-12">
+                  <Send className="mr-2 h-4 w-4" />
+                  Send Message
+                </Button>
+              </form>
+            </Card>
+
+            {/* Office Locations */}
+            <div>
+              <h2 className="text-2xl font-bold mb-6">Our Offices</h2>
+              <div className="space-y-6">
+                {officeLocations.map((office) => (
+                  <Card key={office.city} className="p-6">
+                    <h3 className="text-lg font-semibold mb-4">{office.city}</h3>
+                    <div className="space-y-3 text-sm">
+                      <div className="flex items-start gap-3">
+                        <MapPin className="h-4 w-4 text-[#640D5F] mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">{office.address}</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Phone className="h-4 w-4 text-[#640D5F]" />
+                        <span className="text-gray-700">{office.phone}</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Mail className="h-4 w-4 text-[#640D5F]" />
+                        <span className="text-[#640D5F]">{office.email}</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Clock className="h-4 w-4 text-[#640D5F]" />
+                        <span className="text-gray-700">{office.hours}</span>
+                      </div>
+                    </div>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className={`rounded-[2rem] p-7 ${tone.panel}`}>
-            <h2 className="text-2xl font-semibold">Send a message</h2>
-            <form className="mt-6 grid gap-4">
-              <input className="h-12 rounded-xl border border-current/10 bg-transparent px-4 text-sm" placeholder="Your name" />
-              <input className="h-12 rounded-xl border border-current/10 bg-transparent px-4 text-sm" placeholder="Email address" />
-              <input className="h-12 rounded-xl border border-current/10 bg-transparent px-4 text-sm" placeholder="What do you need help with?" />
-              <textarea className="min-h-[180px] rounded-2xl border border-current/10 bg-transparent px-4 py-3 text-sm" placeholder="Share the full context so we can respond with the right next step." />
-              <button type="submit" className={`inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold ${tone.action}`}>Send message</button>
-            </form>
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Frequently Asked Questions
+            </h2>
+            <p className="mt-4 text-xl text-gray-600">
+              Quick answers to common questions about our services
+            </p>
           </div>
-        </section>
-      </main>
+          
+          <div className="space-y-6">
+            {faqs.map((faq, index) => (
+              <Card key={index} className="p-6">
+                <h3 className="text-lg font-semibold mb-3">{faq.question}</h3>
+                <p className="text-gray-600">{faq.answer}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-gradient-to-r from-[#640D5F] to-[#D91656] text-white">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            Ready to Distribute Your Press Release?
+          </h2>
+          <p className="mt-4 text-xl opacity-90">
+            Get started today and reach thousands of media contacts with your news.
+          </p>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
+            <Button size="lg" className="bg-white text-[#640D5F] hover:bg-gray-100">
+              Get Started Now
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#640D5F]">
+              View Pricing
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   )

@@ -2,30 +2,30 @@ import type { TaskKey } from '@/lib/site-config'
 
 export const siteContent = {
   navbar: {
-    tagline: 'Independent news desk',
+    tagline: 'UK\'s #1 Press Release Distribution Service',
   },
   footer: {
-    tagline: 'Simple publishing for press-style updates',
+    tagline: 'Professional PR distribution for maximum impact',
   },
   hero: {
-    badge: 'Latest updates',
-    title: ['Clear publishing, simple reading, no extra noise.'],
+    badge: 'PR Distribution Service',
+    title: ['UK\'s #1 Press Release Distribution Service'],
     description:
-      'A minimal article-style publishing template built for regular updates, announcements, and media distribution posts.',
+      'Reach thousands of journalists, media outlets, and influencers with our professional press release distribution service. Get your story heard across the UK.',
     primaryCta: {
-      label: 'Browse latest posts',
-      href: '/updates',
+      label: 'Get Started',
+      href: '/pricing',
     },
     secondaryCta: {
-      label: 'Contact us',
+      label: 'Talk to an Expert',
       href: '/contact',
     },
-    searchPlaceholder: 'Search posts',
-    focusLabel: 'Latest',
-    featureCardBadge: 'editor note',
-    featureCardTitle: 'Recent updates appear directly on the homepage.',
+    searchPlaceholder: 'Search press releases...',
+    focusLabel: 'Distribution',
+    featureCardBadge: 'trusted by',
+    featureCardTitle: '500+ Companies Trust Our PR Distribution',
     featureCardDescription:
-      'The homepage works as a clean front page so new posts stay visible without decorative sections getting in the way.',
+      'From startups to Fortune 500 companies, businesses trust us to deliver their press releases to the right media contacts.',
   },
   home: {
     metadata: {

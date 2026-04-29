@@ -1,7 +1,7 @@
 export type SiteShell = 'directory' | 'editorial' | 'studio' | 'market'
 export type HeroVariant = 'search-first' | 'spotlight-split' | 'gallery-mosaic' | 'catalog-promo'
 export type HomeLayout = 'directory-stack' | 'editorial-rhythm' | 'studio-showcase' | 'market-catalog'
-export type NavigationVariant = 'compact' | 'editorial' | 'capsule' | 'minimal'
+export type NavigationVariant = 'compact' | 'editorial' | 'capsule' | 'minimal' | 'press-release-bar'
 export type FooterVariant = 'columns' | 'editorial' | 'dense' | 'minimal'
 export type TaskCardVariant = 'listing-elevated' | 'editorial-feature' | 'studio-panel' | 'catalog-grid'
 export type SiteTaskKey =
