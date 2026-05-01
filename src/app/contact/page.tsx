@@ -248,31 +248,9 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-16 bg-white">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Frequently Asked Questions
-            </h2>
-            <p className="mt-4 text-xl text-gray-600">
-              Quick answers to common questions about our services
-            </p>
-          </div>
-          
-          <div className="space-y-6">
-            {faqs.map((faq, index) => (
-              <Card key={index} className="p-6">
-                <h3 className="text-lg font-semibold mb-3">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-[#640D5F] to-[#D91656] text-white">
+      <section className="py-16 bg-[#640D5F] text-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
             Ready to Distribute Your Press Release?
@@ -281,10 +259,10 @@ export default function ContactPage() {
             Get started today and reach thousands of media contacts with your news.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Button size="lg" className="bg-white text-[#640D5F] hover:bg-gray-100">
+            <Button size="lg" className="bg-white text-[#640D5F] hover:bg-gray-100 font-semibold">
               Get Started Now
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#640D5F]">
+            <Button size="lg" variant="outline" className="border-white text-white bg-transparent hover:bg-white hover:text-[#640D5F] font-semibold">
               View Pricing
             </Button>
           </div>
