@@ -9,11 +9,11 @@ import { REGISTER_PAGE_OVERRIDE_ENABLED, RegisterPageOverride } from '@/override
 function getRegisterConfig(kind: ReturnType<typeof getProductKind>) {
   if (kind === 'directory') {
     return {
-      shell: 'bg-[#f8fbff] text-slate-950',
-      panel: 'border border-slate-200 bg-white',
-      side: 'border border-slate-200 bg-slate-50',
-      muted: 'text-slate-600',
-      action: 'bg-slate-950 text-white hover:bg-slate-800',
+      shell: 'bg-[radial-gradient(circle_at_top,_#3b0f59_0%,_#17052a_48%,_#090312_100%)] text-white',
+      panel: 'border border-white/12 bg-white/[0.06] backdrop-blur-xl',
+      side: 'border border-white/12 bg-white/[0.04] backdrop-blur-xl',
+      muted: 'text-white/75',
+      action: 'bg-gradient-to-r from-[#ff3ea9] to-[#ff6abf] text-white shadow-[0_10px_26px_rgba(255,62,169,0.35)] hover:from-[#ff52b2] hover:to-[#ff79c7]',
       icon: Building2,
       title: 'Create a business-ready account',
       body: 'List services, manage locations, and activate trust signals with a proper directory workflow.',
@@ -21,11 +21,11 @@ function getRegisterConfig(kind: ReturnType<typeof getProductKind>) {
   }
   if (kind === 'editorial') {
     return {
-      shell: 'bg-[#fbf6ee] text-[#241711]',
-      panel: 'border border-[#dcc8b7] bg-[#fffdfa]',
-      side: 'border border-[#e6d6c8] bg-[#fff4e8]',
-      muted: 'text-[#6e5547]',
-      action: 'bg-[#241711] text-[#fff1e2] hover:bg-[#3a241b]',
+      shell: 'bg-[radial-gradient(circle_at_top,_#3b0f59_0%,_#17052a_48%,_#090312_100%)] text-white',
+      panel: 'border border-white/12 bg-white/[0.06] backdrop-blur-xl',
+      side: 'border border-white/12 bg-white/[0.04] backdrop-blur-xl',
+      muted: 'text-white/75',
+      action: 'bg-gradient-to-r from-[#ff3ea9] to-[#ff6abf] text-white shadow-[0_10px_26px_rgba(255,62,169,0.35)] hover:from-[#ff52b2] hover:to-[#ff79c7]',
       icon: FileText,
       title: 'Start your contributor workspace',
       body: 'Create a profile for essays, issue drafts, editorial review, and publication scheduling.',
@@ -33,22 +33,22 @@ function getRegisterConfig(kind: ReturnType<typeof getProductKind>) {
   }
   if (kind === 'visual') {
     return {
-      shell: 'bg-[#07101f] text-white',
-      panel: 'border border-white/10 bg-white/6',
-      side: 'border border-white/10 bg-white/5',
-      muted: 'text-slate-300',
-      action: 'bg-[#8df0c8] text-[#07111f] hover:bg-[#77dfb8]',
+      shell: 'bg-[radial-gradient(circle_at_top,_#3b0f59_0%,_#17052a_48%,_#090312_100%)] text-white',
+      panel: 'border border-white/12 bg-white/[0.06] backdrop-blur-xl',
+      side: 'border border-white/12 bg-white/[0.04] backdrop-blur-xl',
+      muted: 'text-white/75',
+      action: 'bg-gradient-to-r from-[#ff3ea9] to-[#ff6abf] text-white shadow-[0_10px_26px_rgba(255,62,169,0.35)] hover:from-[#ff52b2] hover:to-[#ff79c7]',
       icon: ImageIcon,
       title: 'Set up your creator profile',
       body: 'Launch a visual-first account with gallery publishing, identity surfaces, and profile-led discovery.',
     }
   }
   return {
-    shell: 'bg-[#f7f1ea] text-[#261811]',
-    panel: 'border border-[#ddcdbd] bg-[#fffaf4]',
-    side: 'border border-[#e8dbce] bg-[#f3e8db]',
-    muted: 'text-[#71574a]',
-    action: 'bg-[#5b2b3b] text-[#fff0f5] hover:bg-[#74364b]',
+    shell: 'bg-[radial-gradient(circle_at_top,_#3b0f59_0%,_#17052a_48%,_#090312_100%)] text-white',
+    panel: 'border border-white/12 bg-white/[0.06] backdrop-blur-xl',
+    side: 'border border-white/12 bg-white/[0.04] backdrop-blur-xl',
+    muted: 'text-white/75',
+    action: 'bg-gradient-to-r from-[#ff3ea9] to-[#ff6abf] text-white shadow-[0_10px_26px_rgba(255,62,169,0.35)] hover:from-[#ff52b2] hover:to-[#ff79c7]',
     icon: Bookmark,
     title: 'Create a curator account',
     body: 'Build shelves, save references, and connect collections to your profile without a generic feed setup.',
