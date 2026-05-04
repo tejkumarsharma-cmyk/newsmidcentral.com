@@ -50,6 +50,25 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/latest-wire",
+        destination: "/updates",
+        permanent: true,
+      },
+      {
+        source: "/press-releases",
+        destination: "/updates",
+        permanent: true,
+      },
+      {
+        source: "/wire",
+        destination: "/updates",
+        permanent: true,
+      },
+    ];
+  },
 }
 
 export default nextConfig
