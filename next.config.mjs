@@ -10,6 +10,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
+    unoptimized: true,
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60 * 60 * 24 * 7,
     remotePatterns: [
@@ -46,6 +47,25 @@ const nextConfig = {
               ].join("; "),
           },
         ],
+      },
+    ];
+  },
+  async redirects() {
+    return [
+      {
+        source: "/latest-wire",
+        destination: "/updates",
+        permanent: true,
+      },
+      {
+        source: "/press-releases",
+        destination: "/updates",
+        permanent: true,
+      },
+      {
+        source: "/wire",
+        destination: "/updates",
+        permanent: true,
       },
     ];
   },

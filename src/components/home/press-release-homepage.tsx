@@ -81,15 +81,19 @@ export function PressReleaseHomepage() {
             Publish and scale your best stories with a modern newsroom layout, clear calls-to-action, and strategic distribution.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Button className="rounded-full bg-[#ff3fa4] px-6 text-white shadow-[0_0_35px_rgba(255,63,164,0.4)] hover:bg-[#ea218f]">
-              Book a Free Press Call
-            </Button>
-            <Button
-              variant="outline"
-              className="rounded-full border-[#6e5d8f] bg-[#ffffff12] px-6 text-[#f1ecff] hover:bg-[#ffffff24] hover:text-white"
-            >
-              Learn More
-            </Button>
+            <Link href="http://192.168.1.26:3000/contact">
+              <Button className="rounded-full bg-[#ff3fa4] px-6 text-white shadow-[0_0_35px_rgba(255,63,164,0.4)] hover:bg-[#ea218f]">
+                Book a Free Press Call
+              </Button>
+            </Link>
+            <Link href="http://192.168.1.26:3000/about">
+              <Button
+                variant="outline"
+                className="rounded-full border-[#6e5d8f] bg-[#ffffff12] px-6 text-[#f1ecff] hover:bg-[#ffffff24] hover:text-white"
+              >
+                Learn More
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
