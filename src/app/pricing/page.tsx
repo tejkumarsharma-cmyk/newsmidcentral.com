@@ -11,9 +11,9 @@ import { SITE_CONFIG } from '@/lib/site-config'
 export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     path: '/pricing',
-    title: 'Pricing Plans - Press Release Distribution Services',
-    description: 'Choose the perfect press release distribution plan for your business. From basic to enterprise solutions.',
-    keywords: ['press release pricing', 'PR distribution costs', 'media distribution plans'],
+    title: 'Pricing Plans - Press Media Distribution Services',
+    description: 'Choose the perfect press media distribution plan for your business. From basic to enterprise solutions.',
+    keywords: ['press media pricing', 'PR distribution costs', 'media distribution plans'],
   })
 }
 
@@ -28,7 +28,7 @@ const pricingPlans = [
       'Basic analytics and reporting',
       '24-hour distribution',
       'Email support',
-      'Standard press release template',
+      'Standard press media template',
       '1 revision included',
     ],
     excluded: [
@@ -49,7 +49,7 @@ const pricingPlans = [
       'Advanced analytics and reporting',
       '12-hour distribution',
       'Priority email & phone support',
-      'Custom press release templates',
+      'Custom press media templates',
       '3 revisions included',
       'Media monitoring for 7 days',
       'Industry-specific targeting',
@@ -97,14 +97,14 @@ const addOns = [
     name: 'Professional Writing Service',
     price: '£299',
     period: 'one-time',
-    description: 'Our expert team writes your press release',
+    description: 'Our expert team writes your press media',
     features: ['Professional copywriting', 'SEO optimization', '2 revisions included'],
   },
   {
     name: 'Translation Service',
     price: '£149',
     period: 'per language',
-    description: 'Translate your press release for international distribution',
+    description: 'Translate your press media for international distribution',
     features: ['Professional translation', 'Cultural adaptation', 'Distribution to international media'],
   },
 ]
@@ -119,12 +119,12 @@ const faqs = [
     answer: 'Yes! Our Pro and Premium plans include advanced targeting options to reach specific industries, geographic regions, or types of media outlets.',
   },
   {
-    question: 'How quickly will my press release be distributed?',
+    question: 'How quickly will my press media be distributed?',
     answer: 'Basic plans offer 24-hour distribution, Pro plans include 12-hour priority distribution, and Premium plans feature 6-hour express distribution.',
   },
   {
     question: 'Do you offer refunds?',
-    answer: 'We offer a full refund if we\'re unable to distribute your press release due to content violations or technical issues within our control.',
+    answer: 'We offer a full refund if we\'re unable to distribute your press media due to content violations or technical issues within our control.',
   },
   {
     question: 'Can I change my plan later?',
@@ -143,7 +143,7 @@ export default function PricingPage() {
           <div className="text-center">
             <Badge className="mb-4 bg-[#640D5F] text-white">Transparent Pricing</Badge>
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-              Choose Your Press Release Distribution Plan
+              Choose Your Press Media Distribution Plan
             </h1>
             <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
               Simple, transparent pricing for businesses of all sizes. No hidden fees, no long-term contracts.
@@ -224,7 +224,7 @@ export default function PricingPage() {
               Every Release Includes
             </h2>
             <p className="mt-4 text-xl text-gray-600">
-              All plans come with essential features to ensure your press release reaches the right audience
+              All plans come with essential features to ensure your press media reaches the right audience
             </p>
           </div>
           
@@ -243,7 +243,7 @@ export default function PricingPage() {
               {
                 icon: Shield,
                 title: 'Quality Assurance',
-                description: 'Professional review to ensure your press release meets editorial standards',
+                description: 'Professional review to ensure your press media meets editorial standards',
               },
               {
                 icon: Zap,
@@ -271,7 +271,7 @@ export default function PricingPage() {
               Enhance Your Distribution
             </h2>
             <p className="mt-4 text-xl text-gray-600">
-              Add-on services to maximize your press release impact
+              Add-on services to maximize your press media impact
             </p>
           </div>
           
@@ -337,10 +337,10 @@ export default function PricingPage() {
       <section className="py-16 bg-gradient-to-r from-[#640D5F] to-[#D91656] text-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Ready to Distribute Your Press Release?
+            Ready to Distribute Your Press Media?
           </h2>
           <p className="mt-4 text-xl opacity-90">
-            Join hundreds of businesses trust Newsmidcentral for their press release distribution needs.
+            Join hundreds of businesses trust Newsmidcentral for their press media distribution needs.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <Button size="lg" className="bg-white text-[#640D5F] hover:bg-gray-100">

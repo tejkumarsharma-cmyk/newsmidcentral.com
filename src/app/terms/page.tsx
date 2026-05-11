@@ -10,19 +10,19 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     path: '/terms',
     title: 'Terms of Service - Newsmidcentral',
-    description: 'Read the terms of service for Newsmidcentral press release distribution platform.',
-    keywords: ['terms of service', 'legal', 'press release distribution'],
+    description: 'Read the terms of service for Newsmidcentral press media distribution platform.',
+    keywords: ['terms of service', 'legal', 'press media distribution'],
   })
 }
 
 const sections = [
   { 
-    title: "Press Release Distribution Services", 
-    body: "Our press release distribution services are provided on a per-release basis. Each submission includes distribution to our media network and basic analytics reporting."
+    title: "Press Media Distribution Services", 
+    body: "Our press media distribution services are provided on a per-release basis. Each submission includes distribution to our media network and basic analytics reporting."
   },
   {
     title: "Content Guidelines",
-    body: "All press releases must be factual, newsworthy, and comply with UK media standards. We reserve the right to reject content that is misleading, defamatory, or illegal."
+    body: "All press media must be factual, newsworthy, and comply with UK media standards. We reserve the right to reject content that is misleading, defamatory, or illegal."
   },
   { 
     title: "Payment Terms", 
@@ -34,7 +34,7 @@ const sections = [
   },
   {
     title: "User Responsibilities",
-    body: "Users are responsible for the accuracy and legality of their press releases. You must have the right to distribute all content submitted to our platform."
+    body: "Users are responsible for the accuracy and legality of their press media. You must have the right to distribute all content submitted to our platform."
   },
   {
     title: "Service Limitations",
@@ -56,7 +56,7 @@ export default function TermsPage() {
               Terms of Service
             </h1>
             <p className="mt-4 text-xl text-gray-600">
-              The rules and guidelines for using {SITE_CONFIG.name} press release distribution services.
+              The rules and guidelines for using {SITE_CONFIG.name} press media distribution services.
             </p>
           </div>
         </div>
@@ -89,7 +89,7 @@ export default function TermsPage() {
               </p>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <a 
-                  href="mailto:legal@newsmidcentral.com" 
+                  href="/contact" 
                   className="inline-flex items-center justify-center rounded-full bg-[#640D5F] px-6 py-3 text-white hover:bg-[#4a0a47] transition-colors"
                 >
                   Contact Legal Team

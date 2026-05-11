@@ -12,14 +12,14 @@ import { SITE_CONFIG } from '@/lib/site-config'
 export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     path: '/about',
-    title: 'About Us - UK\'s Leading Press Release Distribution Service',
-    description: 'Learn about Newsmidcentral\'s mission to connect businesses with media outlets through professional press release distribution services.',
-    keywords: ['about', 'press release distribution', 'media relations', 'PR services'],
+    title: 'About Us - UK\'s Leading Press Media Distribution Service',
+    description: 'Learn about Newsmidcentral\'s mission to connect businesses with media outlets through professional press media distribution services.',
+    keywords: ['about', 'press media distribution', 'media relations', 'PR services'],
   })
 }
 
 const stats = [
-  { label: "Press Releases Distributed", value: "50,000+", icon: Globe },
+  { label: "Press Media Distributed", value: "50,000+", icon: Globe },
   { label: "Media Contacts", value: "10,000+", icon: Users },
   { label: "Client Satisfaction", value: "98%", icon: Award },
   { label: "Years of Experience", value: "15+", icon: Clock },
@@ -29,12 +29,12 @@ const values = [
   {
     icon: Target,
     title: "Precision Targeting",
-    description: "We ensure your press release reaches the most relevant journalists and media outlets in your industry.",
+    description: "We ensure your press media reaches the most relevant journalists and media outlets in your industry.",
   },
   {
     icon: Shield,
     title: "Reliable Service",
-    description: "Trusted by hundreds of businesses for consistent, professional press release distribution with guaranteed delivery.",
+    description: "Trusted by hundreds of businesses for consistent, professional press media distribution with guaranteed delivery.",
   },
   {
     icon: Zap,
@@ -79,7 +79,7 @@ export default function AboutPage() {
               <span className="block text-[#640D5F">The Right Audience</span>
             </h1>
             <p className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
-              We're the UK's trusted partner for professional press release distribution, helping businesses of all sizes get their message heard by the right people at the right time.
+              We're the UK's trusted partner for professional press media distribution, helping businesses of all sizes get their message heard by the right people at the right time.
             </p>
           </div>
         </div>
@@ -124,10 +124,10 @@ export default function AboutPage() {
                   Founded in 2009 by former journalists and PR professionals, Newsmidcentral was born from a simple realization: businesses needed a better way to connect with media outlets.
                 </p>
                 <p>
-                  What started as a small service helping local businesses get press coverage has grown into the UK's leading independent press release distribution platform, serving everyone from startups to Fortune 500 companies.
+                  What started as a small service helping local businesses get press coverage has grown into the UK's leading independent press media distribution platform, serving everyone from startups to Fortune 500 companies.
                 </p>
                 <p>
-                  Today, we combine cutting-edge technology with deep media industry expertise to deliver press release distribution that gets real results for our clients.
+                  Today, we combine cutting-edge technology with deep media industry expertise to deliver press media distribution that gets real results for our clients.
                 </p>
               </div>
               
@@ -218,11 +218,11 @@ export default function AboutPage() {
             Ready to Share Your Story?
           </h2>
           <p className="text-xl opacity-90 mb-8">
-            Join thousands of businesses who trust Newsmidcentral for their press release distribution needs.
+            Join thousands of businesses who trust Newsmidcentral for their press media distribution needs.
           </p>
           <div className="flex justify-center">
-            <Button size="lg" variant="outline" className="border-white text-white bg-transparent hover:bg-white hover:text-[#640D5F]">
-              Contact Our Team
+            <Button size="lg" asChild className="bg-white text-[#640D5F] hover:bg-gray-100 font-semibold">
+              <Link href="/contact">Contact Us</Link>
             </Button>
           </div>
         </div>

@@ -6,8 +6,7 @@ import { Search } from 'lucide-react'
 export const NAVBAR_OVERRIDE_ENABLED = true
 
 const primaryLinks = [
-  { label: 'Pricing', href: '/pricing' },
-  { label: 'Press releases', href: '/updates' },
+  { label: 'Press media', href: '/updates' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ]

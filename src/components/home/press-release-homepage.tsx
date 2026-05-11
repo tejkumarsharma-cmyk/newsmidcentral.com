@@ -54,7 +54,7 @@ const testimonials = [
     quote: 'Our team needed reliable publishing and media visibility. The flow is simple and performance has been excellent.',
     name: 'Maya Rao',
     role: 'Marketing Lead',
-    image: 'https://images.unsplash.com/photo-1494790108755-2616b332c1ca?w=100&h=100&fit=crop&crop=face&auto=format',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face&auto=format',
   },
   {
     quote: 'The analytics gave us clarity immediately. We now optimize each release and see stronger results month over month.',
@@ -70,8 +70,8 @@ export function PressReleaseHomepage() {
   return (
     <div className="bg-[#efeff3] text-slate-900">
       <section className="relative overflow-hidden border-b border-white/10 bg-[#120028]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(220,40,170,0.35),transparent_45%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_right,rgba(72,24,181,0.3),transparent_48%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(220,40,170,0.35),transparent_45%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_right,rgba(72,24,181,0.3),transparent_48%)] pointer-events-none" />
         <div className="mx-auto max-w-7xl px-4 pb-20 pt-16 sm:px-6 lg:px-8 lg:pt-24">
           <p className="text-center text-xs uppercase tracking-[0.28em] text-[#d2a6d9]">Everything Your Media Team Needs</p>
           <h1 className="mx-auto mt-4 max-w-3xl text-center text-4xl font-semibold leading-tight text-white sm:text-5xl">
@@ -81,19 +81,12 @@ export function PressReleaseHomepage() {
             Publish and scale your best stories with a modern newsroom layout, clear calls-to-action, and strategic distribution.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Link href="http://192.168.1.26:3000/contact">
-              <Button className="rounded-full bg-[#ff3fa4] px-6 text-white shadow-[0_0_35px_rgba(255,63,164,0.4)] hover:bg-[#ea218f]">
-                Book a Free Press Call
-              </Button>
-            </Link>
-            <Link href="http://192.168.1.26:3000/about">
-              <Button
-                variant="outline"
-                className="rounded-full border-[#6e5d8f] bg-[#ffffff12] px-6 text-[#f1ecff] hover:bg-[#ffffff24] hover:text-white"
-              >
-                Learn More
-              </Button>
-            </Link>
+            <a href="/contact" className="inline-flex items-center justify-center rounded-full bg-[#ff3fa4] px-6 py-2.5 text-sm font-medium text-white shadow-[0_0_35px_rgba(255,63,164,0.4)] hover:bg-[#ea218f]">
+              Book a Free Press Call
+            </a>
+            <a href="/about" className="inline-flex items-center justify-center rounded-full border border-[#6e5d8f] bg-[#ffffff12] px-6 py-2.5 text-sm font-medium text-[#f1ecff] hover:bg-[#ffffff24] hover:text-white">
+              Learn More
+            </a>
           </div>
         </div>
       </section>
@@ -148,11 +141,11 @@ export function PressReleaseHomepage() {
                 <CardContent className="space-y-4 p-5">
                   <p className="text-sm leading-relaxed text-[#3c3450]">"{item.quote}"</p>
                   <div className="flex items-center gap-3">
-                    <div className="relative h-9 w-9 overflow-hidden rounded-full">
+                    <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full">
                       <img 
                         src={item.image} 
                         alt={item.name} 
-                        className="w-full h-full object-cover"
+                        className="absolute inset-0 h-full w-full object-cover"
                       />
                     </div>
                     <div>
@@ -196,7 +189,7 @@ export function PressReleaseHomepage() {
           </div>
           <Card className="overflow-hidden rounded-xl border-[#dfd8ef]">
             <div className="relative h-56">
-              <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&h=400&fit=crop&crop=center&auto=format" alt="Press release distribution" className="w-full h-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&h=400&fit=crop&crop=center&auto=format" alt="Press media distribution" className="w-full h-full object-cover" />
             </div>
           </Card>
         </div>
@@ -209,9 +202,8 @@ export function PressReleaseHomepage() {
             Start your next release with a layout made for visibility, clarity, and measurable media impact.
           </p>
           <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-            <Button className="rounded-full bg-[#ff3fa4] px-6 text-white hover:bg-[#ea218f]">Get Started</Button>
-            <Button variant="outline" className="rounded-full border-[#6e5d8f] bg-transparent px-6 text-[#ece5fb] hover:bg-[#ffffff1f]">
-              View Case Studies
+            <Button asChild className="rounded-full bg-[#ff3fa4] px-6 text-white hover:bg-[#ea218f]">
+              <Link href="/register">Get Started</Link>
             </Button>
           </div>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-xs text-[#b7abc9]">

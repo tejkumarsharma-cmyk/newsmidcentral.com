@@ -15,13 +15,13 @@ export const revalidate = 3
 export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     path: '/articles',
-    title: 'Press Releases - Latest News & Updates',
-    description: 'Browse the latest press releases and news updates from businesses and organizations across the UK.',
-    keywords: ['press releases', 'news updates', 'media releases', 'company announcements'],
+    title: 'Press Media - Latest News & Updates',
+    description: 'Browse the latest press media and news updates from businesses and organizations across the UK.',
+    keywords: ['press media', 'news updates', 'media releases', 'company announcements'],
   })
 }
 
-// Mock data for press releases
+// Mock data for press media
 const pressReleases = [
   {
     id: 1,
@@ -106,10 +106,10 @@ export default function PressReleasesPage({ searchParams }: { searchParams?: { c
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-              Press Releases & News
+              Press Media & News
             </h1>
             <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-              Stay updated with the latest press releases and announcements from businesses and organizations across the UK.
+              Stay updated with the latest press media and announcements from businesses and organizations across the UK.
             </p>
           </div>
           
@@ -119,7 +119,7 @@ export default function PressReleasesPage({ searchParams }: { searchParams?: { c
               <div className="flex-1 relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                 <Input
-                  placeholder="Search press releases..."
+                  placeholder="Search press media..."
                   className="pl-10 h-12 text-base"
                   defaultValue={searchQuery}
                 />
@@ -147,7 +147,7 @@ export default function PressReleasesPage({ searchParams }: { searchParams?: { c
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <p className="text-gray-600">
-              Showing <span className="font-semibold text-gray-900">{pressReleases.length}</span> press releases
+              Showing <span className="font-semibold text-gray-900">{pressReleases.length}</span> press media
             </p>
             <div className="flex items-center gap-2">
               <Button variant="outline" size="sm" className="border-[#640D5F] text-[#640D5F]">
@@ -159,7 +159,7 @@ export default function PressReleasesPage({ searchParams }: { searchParams?: { c
         </div>
       </section>
 
-      {/* Press Release Grid */}
+      {/* Press Media Grid */}
       <section className="py-12 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -247,10 +247,10 @@ export default function PressReleasesPage({ searchParams }: { searchParams?: { c
       <section className="py-16 bg-gradient-to-r from-[#640D5F] to-[#D91656] text-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Stay Updated with Latest Press Releases
+            Stay Updated with Latest Press Media
           </h2>
           <p className="mt-4 text-xl opacity-90">
-            Get the latest press releases delivered directly to your inbox.
+            Get the latest press media delivered directly to your inbox.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:max-w-md mx-auto">
             <Input

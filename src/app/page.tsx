@@ -12,12 +12,12 @@ export const revalidate = 300
 export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     path: '/',
-    title: "UK's #1 Press Release Distribution Service",
-    description: "Professional press release distribution service helping businesses reach media outlets and maximize their PR impact across the UK.",
-    openGraphTitle: "UK's #1 Press Release Distribution Service",
-    openGraphDescription: "Professional press release distribution service helping businesses reach media outlets and maximize their PR impact across the UK.",
+    title: "UK's #1 Press Media Distribution Service",
+    description: "Professional press media distribution service helping businesses reach media outlets and maximize their PR impact across the UK.",
+    openGraphTitle: "UK's #1 Press Media Distribution Service",
+    openGraphDescription: "Professional press media distribution service helping businesses reach media outlets and maximize their PR impact across the UK.",
     image: SITE_CONFIG.defaultOgImage,
-    keywords: ['press release distribution', 'PR services', 'media distribution', 'UK newswire'],
+    keywords: ['press media distribution', 'PR services', 'media distribution', 'UK newswire'],
   })
 }
 

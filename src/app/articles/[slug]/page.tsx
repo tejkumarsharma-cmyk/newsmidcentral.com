@@ -29,11 +29,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     path: `/articles/${slug}`,
     title: pressRelease.title,
     description: pressRelease.excerpt,
-    keywords: ['press release', 'funding', 'technology', 'startup'],
+    keywords: ['press media', 'funding', 'technology', 'startup'],
   })
 }
 
-// Mock related press releases
+// Mock related press media
 const relatedPressReleases = [
   {
     id: 1,
@@ -65,7 +65,7 @@ export default async function PressReleaseDetailPage({ params }: { params: Promi
   const resolvedParams = await params
   const slug = resolvedParams.slug
 
-  // Mock press release data - in real implementation, fetch from API using slug
+  // Mock press media data - in real implementation, fetch from API using slug
   const pressRelease = {
     title: 'Tech Startup Raises $10M in Series A Funding Round',
     subtitle: 'London-based FinTech InnovateSecures Investment to Revolutionize Digital Banking',
@@ -186,7 +186,7 @@ export default async function PressReleaseDetailPage({ params }: { params: Promi
             <div className="space-y-8">
               {/* Share Buttons */}
               <Card className="p-6">
-                <h3 className="text-lg font-semibold mb-4">Share this press release</h3>
+                <h3 className="text-lg font-semibold mb-4">Share this press media</h3>
                 <div className="grid grid-cols-2 gap-3">
                   <Button variant="outline" className="border-[#1877F2] text-[#1877F2] hover:bg-[#1877F2] hover:text-white">
                     <Facebook className="mr-2 h-4 w-4" />
@@ -213,7 +213,7 @@ export default async function PressReleaseDetailPage({ params }: { params: Promi
                 <div className="space-y-3">
                   <Button className="w-full bg-[#640D5F] hover:bg-[#4a0a47]">
                     <Share2 className="mr-2 h-4 w-4" />
-                    Share Press Release
+                    Share Press Media
                   </Button>
                   <Button variant="outline" className="w-full border-[#640D5F] text-[#640D5F]">
                     Download PDF
@@ -228,7 +228,7 @@ export default async function PressReleaseDetailPage({ params }: { params: Promi
               <Card className="p-6 bg-gradient-to-br from-[#f8f4ff] to-[#faf0ff]">
                 <h3 className="text-lg font-semibold mb-2">Stay Updated</h3>
                 <p className="text-sm text-gray-600 mb-4">
-                  Get the latest press releases delivered to your inbox.
+                  Get the latest press media delivered to your inbox.
                 </p>
                 <Button className="w-full bg-[#640D5F] hover:bg-[#4a0a47]">
                   Subscribe Now
@@ -239,12 +239,12 @@ export default async function PressReleaseDetailPage({ params }: { params: Promi
         </div>
       </section>
 
-      {/* Related Press Releases */}
+      {/* Related Press Media */}
       <section className="py-16 bg-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Related Press Releases
+              Related Press Media
             </h2>
             <p className="mt-4 text-xl text-gray-600">
               Explore more news and announcements from various industries.
@@ -292,7 +292,7 @@ export default async function PressReleaseDetailPage({ params }: { params: Promi
       <section className="py-16 bg-gradient-to-r from-[#640D5F] to-[#D91656] text-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Distribute Your Press Release with Newsmidcentral
+            Distribute Your Press Media with Newsmidcentral
           </h2>
           <p className="mt-4 text-xl opacity-90">
             Reach thousands of journalists and media outlets with our professional distribution service.

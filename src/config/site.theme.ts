@@ -4,7 +4,7 @@ export const SITE_THEME = defineSiteTheme({
   shell: 'editorial',
   hero: {
     variant: 'spotlight-split',
-    eyebrow: 'Press Release Distribution',
+    eyebrow: 'Press Media Distribution',
   },
   home: {
     layout: 'editorial-rhythm',

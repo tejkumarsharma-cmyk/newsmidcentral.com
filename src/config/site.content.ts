@@ -2,16 +2,16 @@ import type { TaskKey } from '@/lib/site-config'
 
 export const siteContent = {
   navbar: {
-    tagline: 'UK\'s #1 Press Release Distribution Service',
+    tagline: 'UK\'s #1 Press Media Distribution Service',
   },
   footer: {
     tagline: 'Professional PR distribution for maximum impact',
   },
   hero: {
     badge: 'PR Distribution Service',
-    title: ['UK\'s #1 Press Release Distribution Service'],
+    title: ['UK\'s #1 Press Media Distribution Service'],
     description:
-      'Reach thousands of journalists, media outlets, and influencers with our professional press release distribution service. Get your story heard across the UK.',
+      'Reach thousands of journalists, media outlets, and influencers with our professional press media distribution service. Get your story heard across the UK.',
     primaryCta: {
       label: 'Get Started',
       href: '/pricing',
@@ -20,12 +20,12 @@ export const siteContent = {
       label: 'Talk to an Expert',
       href: '/contact',
     },
-    searchPlaceholder: 'Search press releases...',
+    searchPlaceholder: 'Search press media...',
     focusLabel: 'Distribution',
     featureCardBadge: 'trusted by',
     featureCardTitle: '500+ Companies Trust Our PR Distribution',
     featureCardDescription:
-      'From startups to Fortune 500 companies, businesses trust us to deliver their press releases to the right media contacts.',
+      'From startups to Fortune 500 companies, businesses trust us to deliver their press media to the right media contacts.',
   },
   home: {
     metadata: {

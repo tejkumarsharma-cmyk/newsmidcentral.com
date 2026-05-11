@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import { NavbarShell } from '@/components/shared/navbar-shell'
 import { Footer } from '@/components/shared/footer'
 import { Card, CardContent } from '@/components/ui/card'
@@ -9,23 +9,23 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     path: '/privacy',
     title: 'Privacy Policy - Newsmidcentral',
-    description: 'Read the privacy policy for Newsmidcentral press release distribution platform.',
-    keywords: ['privacy policy', 'data protection', 'press release distribution'],
+    description: 'Read the privacy policy for Newsmidcentral press media distribution platform.',
+    keywords: ['privacy policy', 'data protection', 'press media distribution'],
   })
 }
 
 const sections = [
   { 
     title: 'Information We Collect', 
-    body: 'We collect account information, contact details, press release content, and usage analytics to provide our distribution services. This includes name, email, company information, and payment details for service delivery.'
+    body: 'We collect account information, contact details, press media content, and usage analytics to provide our distribution services. This includes name, email, company information, and payment details for service delivery.'
   },
   { 
     title: 'How We Use Your Information', 
-    body: 'Your information is used to deliver press release distribution services, process payments, provide customer support, and improve our platform. We analyze usage patterns to enhance service quality and user experience.'
+    body: 'Your information is used to deliver press media distribution services, process payments, provide customer support, and improve our platform. We analyze usage patterns to enhance service quality and user experience.'
   },
   { 
     title: 'Data Sharing and Distribution', 
-    body: 'Your press releases are shared with our media network of journalists and publications. Personal information is never sold or shared with third parties for marketing purposes without your explicit consent.'
+    body: 'Your press media are shared with our media network of journalists and publications. Personal information is never sold or shared with third parties for marketing purposes without your explicit consent.'
   },
   { 
     title: 'Data Security', 
@@ -96,7 +96,7 @@ export default function PrivacyPage() {
               </p>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <a 
-                  href="mailto:privacy@newsmidcentral.com" 
+                  href="/contact" 
                   className="inline-flex items-center justify-center rounded-full bg-[#640D5F] px-6 py-3 text-white hover:bg-[#4a0a47] transition-colors"
                 >
                   Contact Privacy Team
